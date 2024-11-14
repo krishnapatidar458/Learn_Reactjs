@@ -1,6 +1,4 @@
 import {useState} from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 
 function App() {
@@ -17,15 +15,18 @@ function App() {
 
   return(
     <>
-      <h1>First React project :- {counter}</h1>
 
+      <h1>First React project :- {counter}</h1>
       <button onClick={count}>
         Add count
       </button>
+
       <br/>
+
       <button onClick={recount}>
         Remove count
       </button>
+
     </>
   )
 }
