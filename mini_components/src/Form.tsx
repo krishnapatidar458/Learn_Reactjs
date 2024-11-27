@@ -1,31 +1,31 @@
-// import React,{ FormEvent, useRef } from "react";
-import { FieldValues, useForm } from "react-hook-form";
+import React,{ FormEvent, useRef } from "react";
+// import { FieldValues, useForm } from "react-hook-form";
 
 const Form = () => {
-    // const nameRef = useRef<HTMLInputElement>(null);
-    // const ageRef = useRef<HTMLInputElement>(null);
+    const nameRef = useRef<HTMLInputElement>(null);
+    const ageRef = useRef<HTMLInputElement>(null);
 
-    // const handleSubmit = (event:FormEvent) =>{
-    //     event.preventDefault();
-    //     if(nameRef.current !== null){
-    //         console.log(nameRef.current.value);
-    //     }if(ageRef.current !== null)
-        // console.log(ageRef.current.value);
-    // }
+    const handleSubmit = (event:FormEvent) =>{
+        event.preventDefault();
+        if(nameRef.current !== null){
+            console.log(nameRef.current.value);
+        }if(ageRef.current !== null)
+        console.log(ageRef.current.value);
+    }
 
-    const {register,handleSubmit} = useForm();
+    // const {register,handleSubmit} = useForm();
 
-    const onSubmit = (data : FieldValues) => console.log(data);
+    // const onSubmit = (data : FieldValues) => console.log(data);
      
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label id="name" className="form-label">Name</label>
-                <input {...register("name")} type="text" id="name" className="form-control" />
+                <input ref={nameRef} type="text" id="name" className="form-control" />
             </div>
             <div className="mb-3">
                 <label id="age" className="form-label">Age</label>
-                <input {...register("age")} type="number" id="age" className="form-control"/>
+                <input ref={ageRef} type="number" id="age" className="form-control"/>
             </div>
             <button className="btn btn-primary" type="submit">Submit</button>
 
